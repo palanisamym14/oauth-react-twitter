@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
+import LoginComponent from './components/LoginComponent';
+import { connect } from 'react-redux';
+import Dashboard from './components/dashboard/Dashboard';
 
-const App: React.FC = () => {
+
+export class App extends React.Component<any,any> {
+  public render(){  
+    const isAuthenticated = this.props.user.isLoggedIn;
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Switch>
+          
+            <Route path="/" exact render={() => {
+              return !isAuthenticated ? (
+                <LoginComponent />
+              ) : (
+                  <Redirect to="/home" />
+                );
+            }} />
+            <Route path="/home" render={() => {
+              return isAuthenticated? (
+                <Dashboard />
+              ) : (
+                  <Redirect to="/" />
+                );
+            }} />
+            <Route render={() => <Redirect to="/" />} />
+          {/* </Switch>
+          <Route path="/followers" component={Dashboard}></Route>
+          <Route path="/login" component={LoginComponent}></Route> */}
+        </Switch>
+      </Router>
     </div>
   );
+  }
 }
 
-export default App;
+const mapStateToProps = (state: any) => ({
+  user: state.loginData
+})
+
+export default connect(mapStateToProps, { })(App);
+

@@ -1,0 +1,34 @@
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 1.375rem;
+    height: 1.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+    top: 8px;
+    /* left: 25px; */
+    margin-left: 10px;
+}
+
+.left-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+.form-group{
+    margin-bottom: 0px !important;
+}
