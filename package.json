@@ -3,13 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "@types/react-redux": "^7.1.2",
+    "@types/react-router-dom": "^4.3.5",
+    "@types/react-twitter-auth": "0.0.1",
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "install": "^0.13.0",
+    "jquery": "^3.4.1",
+    "npm": "^6.11.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.2",
+    "react-twitter-auth": "0.0.13",
+    "reactstrap": "^8.0.1",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "typescript": "3.6.3"
   },
   "scripts": {
@@ -32,5 +50,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/reactstrap": "^8.0.4"
   }
 }
