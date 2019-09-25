@@ -10,6 +10,8 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
+import {loginInfo} from './../../../store/actions/userActionCreator';
+
 
 class TopNavBar extends React.Component<any,any> {
   constructor(props: any) {
@@ -24,6 +26,7 @@ class TopNavBar extends React.Component<any,any> {
     this.setState({
       isOpen: !this.state.isOpen
     });
+    this.props.loginInfo(null)
   }
   render() {
     const userInfo = this.props.user?this.props.user:{};
@@ -40,8 +43,9 @@ class TopNavBar extends React.Component<any,any> {
                 <DropdownToggle nav caret>
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>
-                    LogOut
+                  <DropdownItem >
+                  <div onClick={this.toggle}>LogOut</div>
+                    
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
@@ -55,4 +59,4 @@ class TopNavBar extends React.Component<any,any> {
 const mapStateToProps = (state: any) => ({
   user: state.loginData.loginInfo
 })
-export default connect(mapStateToProps, { })(TopNavBar)
+export default connect(mapStateToProps, {loginInfo})(TopNavBar)

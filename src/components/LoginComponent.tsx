@@ -19,10 +19,10 @@ class LoginComponent extends React.Component<any, any>  {
   }
   render() {
     return (
-      <div>
-        <TwitterLogin loginUrl="http://localhost:4000/api/v1/auth/twitter"
+      <div className="vh-center">
+        <TwitterLogin loginUrl="http://localhost:4000/api/auth/twitter"
           onFailure={this.onFailed} onSuccess={this.onSuccess}
-          requestTokenUrl="http://localhost:4000/api/v1/auth/twitter/reverse" />
+          requestTokenUrl="http://localhost:4000/api/auth/twitter/callback" />
       </div>
     );
   }
@@ -32,4 +32,4 @@ const mapStateToProps = (state: any) => ({
   user: state.loginData
 })
 
-export default connect(mapStateToProps, { loginInfo})(LoginComponent);
+export default connect(mapStateToProps,{ loginInfo})(LoginComponent);

@@ -25,8 +25,8 @@ export const getFollowersDetails = (username: any) => {
       dispatch(updateSpinner(true));
       try {
         axios.all([
-          axios.get(`http://localhost:4000/api/v1/getUserDetails/${username}`),
-          axios.get(`http://localhost:4000/api/v1/getFollwersList/${username}`)
+          axios.get(`http://localhost:4000/api/getUserDetails/${username}`),
+          axios.get(`http://localhost:4000/api//getFollwersList/${username}`)
         ]).then(axios.spread(function (userDetails: { [x: string]: any; }, followersList: { [x: string]: any; }) {
           dispatch(setUserDetails({
             userDetails: userDetails['data'],

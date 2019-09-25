@@ -25,7 +25,7 @@ export default (state: any = initialstate, action: any) => {
 
 export const InitialLogin = (state: any, action: any) => {
   const payload = action.payload;
-  if (payload !== undefined) {
+  if (!!payload) {
     return { ...state, loginInfo: payload, isLoggedIn: true };
   }
   return { ...state, loginInfo: null, isLoggedIn: false };
@@ -33,6 +33,6 @@ export const InitialLogin = (state: any, action: any) => {
 
 export const followersFilter = (state: any, action: any) => {
   const payload = action.payload;
-  state["followersFilter"] = Object.assign(state["followersFilter"], payload)
-  return { ...state}
+  const _followersFilter = {...state["followersFilter"], ...payload};
+  return { ...state, ...{followersFilter: _followersFilter} };
 };

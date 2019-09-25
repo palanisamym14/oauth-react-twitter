@@ -36,10 +36,11 @@ class Dashboard extends React.Component<any, any>  {
     );
   }
 }
-const mapStateToProps = (state: { loginData: { loginInfo: any; followersList: any; }; loading: any; }) => ({
+const mapStateToProps = (state: { loginData: { loginInfo: any; followersList: any; followersFilter: any; }; loading: any; }) => ({
   userDetails: state.loginData.loginInfo,
   loading: state.loading,
-  followers: state.loginData.followersList
+  followers: state.loginData.followersList, 
+  followersFilter: state.loginData.followersFilter
 })
 
 const mapDispatchToProps = (dispatch: { (arg0: any): void; (arg0: any): void; }) => {

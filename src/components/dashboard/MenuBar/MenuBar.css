@@ -1,14 +1,21 @@
-.menu-container{
+.menu-container {
     background: #fff;
     padding: 7px 0;
 }
-.menu-container > .row{
+
+.menu-container>.row {
     align-items: center
 }
-.menu-container .col-3:first-child div{
+
+.menu-container .col-3 div {
+    opacity: 0.5;
+}
+
+.menu-container .col-3:first-child div {
     display: inline-block;
     border-bottom: 1px solid gray;
     padding-bottom: 3px;
     color: #ef6c77;
     border-bottom-color: #ef6c77;
+    opacity: 1;
 }

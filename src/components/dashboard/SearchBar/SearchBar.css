@@ -29,6 +29,24 @@
     align-items: baseline;
     justify-content: space-evenly;
 }
-.form-group{
+
+.form-group {
     margin-bottom: 0px !important;
+}
+
+.left-container div:last-child svg {
+    position: absolute;
+    float: right;
+    right: 6px;
+}
+
+.left-container select {
+    -webkit-appearance: inherit;
+    padding-right: 25px;
+}
+
+.left-container>div:last-child {
+    display: flex;
+    align-items: center;
+    position: relative;
 }

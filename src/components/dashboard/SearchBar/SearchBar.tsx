@@ -39,13 +39,12 @@ class SearchBar extends React.Component<any, any>  {
         <Input type="select" name="select" id="exampleSelect" 
           onChange={this.onFilterchange.bind(this)}>
             <option value="default">default</option>
-            <option value="az">Asc (a-z)</option>
-            <option value="za">Desc (z-a)</option>
-            <option value="startswith">startsWith</option>
+            <option value="startswith">starts with</option>
             <option value="contains">contains</option>
-            <option value="endwith">endWith</option>
+            <option value="doesnotcontains">doesnot contains</option>
+            <option value="endwith">ends with</option>
           </Input>
-        </div>
+          </div>
         </div>
       </>
     );
