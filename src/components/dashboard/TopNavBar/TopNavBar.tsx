@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
-import {loginInfo} from './../../../store/actions/userActionCreator';
+import {loginInfo} from '../../../store/actions/twitterActionCreator';
 
 
 class TopNavBar extends React.Component<any,any> {
@@ -57,6 +57,6 @@ class TopNavBar extends React.Component<any,any> {
   }
 }
 const mapStateToProps = (state: any) => ({
-  user: state.loginData.loginInfo
+  user: state.twitterInfo.loginInfo
 })
 export default connect(mapStateToProps, {loginInfo})(TopNavBar)

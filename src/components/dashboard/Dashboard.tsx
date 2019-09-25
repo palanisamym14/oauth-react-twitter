@@ -5,7 +5,7 @@ import TwitterCards from '../TwitterCard/TwitterCards';
 import { Container } from 'reactstrap';
 import './Dashboard.css'
 import { connect } from 'react-redux';
-import { getFollowersDetails, onSessionLogout } from '../../store/actions/userActionCreator';
+import { getFollowersDetails, onSessionLogout } from '../../store/actions/twitterActionCreator';
 class Dashboard extends React.Component<any, any>  {
   constructor(props:any){
     super(props)
@@ -36,11 +36,11 @@ class Dashboard extends React.Component<any, any>  {
     );
   }
 }
-const mapStateToProps = (state: { loginData: { loginInfo: any; followersList: any; followersFilter: any; }; loading: any; }) => ({
-  userDetails: state.loginData.loginInfo,
+const mapStateToProps = (state: { twitterInfo: { loginInfo: any; followersList: any; followersFilter: any; }; loading: any; }) => ({
+  userDetails: state.twitterInfo.loginInfo,
   loading: state.loading,
-  followers: state.loginData.followersList, 
-  followersFilter: state.loginData.followersFilter
+  followers: state.twitterInfo.followersList, 
+  followersFilter: state.twitterInfo.followersFilter
 })
 
 const mapDispatchToProps = (dispatch: { (arg0: any): void; (arg0: any): void; }) => {

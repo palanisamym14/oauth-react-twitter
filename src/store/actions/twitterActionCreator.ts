@@ -1,4 +1,4 @@
-import { userConstants } from "../constants/user-constants";
+import { userConstants } from "../constants/actionTypes";
 import axios from 'axios';
 export const loginInfo = (data: any) => (dispatch: any) =>
   dispatch({
@@ -26,7 +26,7 @@ export const getFollowersDetails = (username: any) => {
       try {
         axios.all([
           axios.get(`http://localhost:4000/api/getUserDetails/${username}`),
-          axios.get(`http://localhost:4000/api//getFollwersList/${username}`)
+          axios.get(`http://localhost:4000/api/getFollwersList/${username}`)
         ]).then(axios.spread(function (userDetails: { [x: string]: any; }, followersList: { [x: string]: any; }) {
           dispatch(setUserDetails({
             userDetails: userDetails['data'],

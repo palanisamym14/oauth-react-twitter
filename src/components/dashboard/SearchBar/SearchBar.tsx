@@ -3,7 +3,7 @@ import './SearchBar.css'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faSearch, faFilter } from '@fortawesome/free-solid-svg-icons'
 import { connect } from 'react-redux';
-import { onsearchText } from '../../../store/actions/userActionCreator';
+import { onsearchText } from '../../../store/actions/twitterActionCreator';
 import { Input } from 'reactstrap';
 
 class SearchBar extends React.Component<any, any>  {
@@ -52,8 +52,8 @@ class SearchBar extends React.Component<any, any>  {
 }
 
 
-const mapStateToProps = (state:any) => ({
-  searchText:state.loginData.onsearchText
+const mapStateToProps = (state: any) => ({
+  searchText: state.twitterInfo.onsearchText
 })
 
 const mapDispatchToProps = (dispatch:any) => {

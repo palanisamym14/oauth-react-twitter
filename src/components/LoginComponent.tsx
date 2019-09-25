@@ -1,16 +1,16 @@
 import React from 'react';
-import TwitterLogin from 'react-twitter-auth'
-import { connect } from 'react-redux';
-import {loginInfo} from '../store/actions/userActionCreator';
+import TwitterLogin from 'react-twitter-auth';
 class LoginComponent extends React.Component<any, any>  {
   constructor(props: any) {
     super(props);
     this.onFailed = this.onFailed.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
   }
+
   onFailed() {
 
   }
+  
   onSuccess(response: any) {
     response.json().then((data: any) => {
       this.props.loginInfo(data);
@@ -28,8 +28,4 @@ class LoginComponent extends React.Component<any, any>  {
   }
 }
 
-const mapStateToProps = (state: any) => ({
-  user: state.loginData
-})
-
-export default connect(mapStateToProps,{ loginInfo})(LoginComponent);
+export default (LoginComponent);

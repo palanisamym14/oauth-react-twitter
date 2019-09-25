@@ -46,7 +46,7 @@ class MenuBar extends React.Component<any, any> {
   }
 }
 const mapStateToProps = (state: any) => ({
-  user: state.loginData
+  user: state.twitterInfo
 })
 
 export default connect(mapStateToProps, { })(MenuBar)

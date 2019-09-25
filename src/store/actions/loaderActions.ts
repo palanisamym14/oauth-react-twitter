@@ -1,4 +1,4 @@
-import { loaderConstants } from '../constants/user-constants';
+import { loaderConstants } from '../constants/actionTypes';
 
 export const enableLoader = (data: any) => (dispatch: any) => dispatch({
     type: loaderConstants.LOADING_INFO,

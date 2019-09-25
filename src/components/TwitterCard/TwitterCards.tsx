@@ -29,7 +29,7 @@ class TwitterCards extends React.Component<any, any>  {
         case 'contain':
           return user.name.toLowerCase().indexOf(textInput) !== -1 ? true : false
         case 'doesnotcontain':
-          return user.name.toLowerCase().indexOf(textInput) !== -1 ? false: true
+          return user.name.toLowerCase().indexOf(textInput) !== -1 ? false : true
         default:
           return user.name.toLowerCase().indexOf(textInput) !== -1 ? true : false
       }
@@ -40,9 +40,6 @@ class TwitterCards extends React.Component<any, any>  {
     });
   }
   render() {
-    // const { users } = this.props.followers;
-    // const {followersFilter} = this.props;
-
     return (
       <Row>
         {this.onFollowerList()}
@@ -50,8 +47,8 @@ class TwitterCards extends React.Component<any, any>  {
     );
   }
 }
-const mapStateToProps = (state: { loginData: { followersFilter: any; }; }) => ({ 
-  followersFilter: state.loginData.followersFilter
+const mapStateToProps = (state: { twitterInfo: { followersFilter: any; }; }) => ({
+  followersFilter: state.twitterInfo.followersFilter
 })
 
 export default connect(mapStateToProps)(TwitterCards);
