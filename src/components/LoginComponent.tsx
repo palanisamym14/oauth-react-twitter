@@ -1,5 +1,8 @@
 import React from 'react';
 import TwitterLogin from 'react-twitter-auth';
+import { connect } from 'react-redux';
+import { loginInfo } from './../store/actions/twitterActionCreator';
+
 class LoginComponent extends React.Component<any, any>  {
   constructor(props: any) {
     super(props);
@@ -28,4 +31,8 @@ class LoginComponent extends React.Component<any, any>  {
   }
 }
 
-export default (LoginComponent);
+const mapStateToProps = (state: any) => ({
+  user: state.twitterInfo
+})
+
+export default connect(mapStateToProps, {loginInfo})(LoginComponent);
